@@ -1,6 +1,4 @@
 using ChatRelay.API.Data;
-using ChatRelay.API.Middleware;
-using ChatRelay.API.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
