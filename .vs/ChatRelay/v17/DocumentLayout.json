@@ -80,9 +80,10 @@
               "RelativeDocumentMoniker": "ChatRelay.API\\appsettings.json",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\appsettings.json",
               "RelativeToolTip": "ChatRelay.API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-08T10:01:36.723Z"
+              "WhenOpened": "2026-03-08T10:01:36.723Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -104,7 +105,7 @@
               "RelativeDocumentMoniker": "ChatRelay.API\\Program.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Program.cs",
               "RelativeToolTip": "ChatRelay.API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAACAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-08T09:55:26.225Z",
               "EditorCaption": ""
