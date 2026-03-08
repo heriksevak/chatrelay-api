@@ -7,6 +7,14 @@
       "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\chatrelay.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\chatrelay.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -22,11 +30,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ChatRelay.API.http",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\ChatRelay.API.http",
+              "RelativeDocumentMoniker": "ChatRelay.API\\ChatRelay.API.http",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\ChatRelay.API.http",
+              "RelativeToolTip": "ChatRelay.API\\ChatRelay.API.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-03-08T10:21:48.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "ChatRelay.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "ChatRelay.API\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-08T10:21:32.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\appsettings.json",
               "RelativeDocumentMoniker": "ChatRelay.API\\appsettings.json",
@@ -38,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "HealthController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Controllers\\HealthController.cs",
               "RelativeDocumentMoniker": "ChatRelay.API\\Controllers\\HealthController.cs",
@@ -56,7 +90,7 @@
               "RelativeDocumentMoniker": "ChatRelay.API\\Program.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Program.cs",
               "RelativeToolTip": "ChatRelay.API\\Program.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAACsAAAAaAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAIwEEAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-08T09:55:26.225Z",
               "EditorCaption": ""
