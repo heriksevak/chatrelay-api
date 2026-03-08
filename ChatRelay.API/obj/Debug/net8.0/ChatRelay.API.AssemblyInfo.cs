@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChatRelay.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+97feaf7bd025c368f3c28cb38f78aa80f2ed78e0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b0815308d44b40f91c47f2c81c4ce3b2f4e68f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChatRelay.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChatRelay.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
