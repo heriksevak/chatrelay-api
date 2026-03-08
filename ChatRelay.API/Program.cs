@@ -18,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Background worker
-builder.Services.AddHostedService<MessageWorker>();
+//builder.Services.AddHostedService<MessageWorker>();
 
 var app = builder.Build();
 
