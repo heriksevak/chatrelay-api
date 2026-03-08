@@ -31,5 +31,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseMiddleware<ApiKeyMiddleware>();
 app.MapControllers();
-
-app.Run();
+app.UseHttpsRedirection();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+app.Run($"http://0.0.0.0:{port}");

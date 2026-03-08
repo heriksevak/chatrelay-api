@@ -110,3 +110,4 @@ C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\refint\ChatRel
 C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ChatRelay.API.pdb
 C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ChatRelay.API.genruntimeconfig.cache
 C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ref\ChatRelay.API.dll
+C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ChatRelay.API.sourcelink.json
