@@ -12,10 +12,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient<WhatsAppService>();
 
 // MySQL connection
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionString =
+    Environment.GetEnvironmentVariable("MYSQL_CONNECTION") ??
+    builder.Configuration.GetConnectionString("DefaultConnection");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(connectionString, ServerVersion.Parse("8.0.36-mysql")));
 
 // Background worker
 builder.Services.AddHostedService<MessageWorker>();
