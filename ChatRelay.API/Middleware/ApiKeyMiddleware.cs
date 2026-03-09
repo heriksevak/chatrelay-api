@@ -12,11 +12,14 @@ public class ApiKeyMiddleware
 
     public async Task InvokeAsync(HttpContext context, ApplicationDbContext db)
     {
-        if (context.Request.Path.StartsWithSegments("/webhooks"))
+        var path = context.Request.Path.Value?.ToLower();
+
+        if (path == "/" || path.StartsWith("/webhook"))
         {
             await _next(context);
             return;
         }
+
         if (!context.Request.Headers.TryGetValue("X-API-KEY", out var extractedApiKey))
         {
             context.Response.StatusCode = 401;
