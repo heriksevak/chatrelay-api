@@ -19,8 +19,10 @@ public class MessageWorker : BackgroundService
 
             var pendingMessages = await db.Messages
                 .Where(m => m.Status == "Pending")
+                .OrderBy(m => m.Id)
                 .Take(10)
                 .ToListAsync();
+
 
             foreach (var msg in pendingMessages)
             {
