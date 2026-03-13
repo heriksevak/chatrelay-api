@@ -18,9 +18,12 @@ namespace ChatRelay.API.Controllers
             _whatsAppService = whatsAppService;
         }
         [HttpPost("send")]
-        public IActionResult SendMessage([FromBody] Message request)
+        public async Task<IActionResult> SendMessage([FromBody] Message request)
         {
             var tenant = HttpContext.Items["Tenant"] as Tenant;
+
+            if (tenant == null)
+                return Unauthorized();
 
             var message = new Message
             {
@@ -32,9 +35,31 @@ namespace ChatRelay.API.Controllers
             };
 
             _context.Messages.Add(message);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Message queued", id = message.Id });
+            try
+            {
+                var providerMessageId = await _whatsAppService.SendMessage(
+                    request.Phone,
+                    request.Content
+                );
+
+                message.ProviderMessageId = providerMessageId;
+                message.Status = "Sent";
+
+                await _context.SaveChangesAsync();
+            }
+            catch
+            {
+                message.Status = "Failed";
+                await _context.SaveChangesAsync();
+            }
+
+            return Ok(new
+            {
+                message = "Message processed",
+                id = message.Id
+            });
         }
     }
 }
