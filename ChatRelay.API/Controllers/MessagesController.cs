@@ -26,12 +26,14 @@ namespace ChatRelay.API.Controllers
             if (tenant == null)
                 return Unauthorized();
 
+            var rawJson = JsonSerializer.Serialize(request);
+
             var message = new Message
             {
                 TenantId = tenant.Id,
-                Phone = request.Phone,
-                Type = request.Type,
-                Content = JsonSerializer.Serialize(request.Data),
+                Phone = request.to,
+                Type = request.type,
+                Content = rawJson,
                 Status = "Pending",
                 CreatedAt = DateTime.UtcNow
             };
@@ -41,11 +43,7 @@ namespace ChatRelay.API.Controllers
 
             try
             {
-                var metaResponse = await _whatsAppService.SendMessage(
-                    request.Phone,
-                    request.Type,
-                    request.Data
-                );
+                var metaResponse = await _whatsAppService.SendMessage(request.to,request.type,rawJson);
 
                 using var doc = JsonDocument.Parse(metaResponse);
 
@@ -59,7 +57,7 @@ namespace ChatRelay.API.Controllers
 
                 await _context.SaveChangesAsync();
 
-                return Content(metaResponse, "application/json"); // return Meta response
+                return Content(metaResponse, "application/json");
             }
             catch
             {

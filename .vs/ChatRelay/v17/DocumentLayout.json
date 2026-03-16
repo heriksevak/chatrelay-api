@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\source\\repos\\ChatRelay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\services\\messageworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\services\\messageworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\services\\whatsappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\services\\whatsappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\services\\whatsappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\services\\whatsappservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\services\\messageworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\services\\messageworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\controllers\\webhookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\controllers\\webhookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|solutionrelative:chatrelay.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3950CFA5-51FE-468C-8422-62AE8461BC4C}|ChatRelay.API\\ChatRelay.API.csproj|c:\\users\\hp\\source\\repos\\chatrelay\\chatrelay.api\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,24 +58,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "WebhookController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Controllers\\WebhookController.cs",
+              "RelativeDocumentMoniker": "ChatRelay.API\\Controllers\\WebhookController.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Controllers\\WebhookController.cs",
+              "RelativeToolTip": "ChatRelay.API\\Controllers\\WebhookController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAewEYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T17:40:54.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Message.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Models\\Message.cs",
               "RelativeDocumentMoniker": "ChatRelay.API\\Models\\Message.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Models\\Message.cs",
               "RelativeToolTip": "ChatRelay.API\\Models\\Message.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAaAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA3wAkAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-14T17:53:15.303Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Program.cs",
               "RelativeDocumentMoniker": "ChatRelay.API\\Program.cs",
@@ -79,8 +96,7 @@
               "RelativeToolTip": "ChatRelay.API\\Program.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAAwC8AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T09:55:26.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-08T09:55:26.225Z"
             },
             {
               "$type": "Document",
@@ -90,14 +106,14 @@
               "RelativeDocumentMoniker": "ChatRelay.API\\Services\\WhatsAppService.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Services\\WhatsAppService.cs",
               "RelativeToolTip": "ChatRelay.API\\Services\\WhatsAppService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACsAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-13T18:12:17.448Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\appsettings.json",
               "RelativeDocumentMoniker": "ChatRelay.API\\appsettings.json",
@@ -105,38 +121,37 @@
               "RelativeToolTip": "ChatRelay.API\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-08T10:01:36.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-08T10:01:36.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MessagesController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Controllers\\MessagesController.cs",
               "RelativeDocumentMoniker": "ChatRelay.API\\Controllers\\MessagesController.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Controllers\\MessagesController.cs",
               "RelativeToolTip": "ChatRelay.API\\Controllers\\MessagesController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAIwEgAAAABAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAWwB0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-13T18:05:27.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MessageWorker.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Services\\MessageWorker.cs",
               "RelativeDocumentMoniker": "ChatRelay.API\\Services\\MessageWorker.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Services\\MessageWorker.cs",
               "RelativeToolTip": "ChatRelay.API\\Services\\MessageWorker.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAQwB0AAAANAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAewCIAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T03:12:00.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ApiKeyMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Middleware\\ApiKeyMiddleware.cs",
               "RelativeDocumentMoniker": "ChatRelay.API\\Middleware\\ApiKeyMiddleware.cs",
@@ -144,12 +159,11 @@
               "RelativeToolTip": "ChatRelay.API\\Middleware\\ApiKeyMiddleware.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAAwCwAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T03:25:56.722Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-09T03:25:56.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ChatRelay.API\\Properties\\launchSettings.json",
@@ -161,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ChatRelay.API.http",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\ChatRelay.API.http",
               "RelativeDocumentMoniker": "ChatRelay.API\\ChatRelay.API.http",
@@ -173,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ChatRelay.API.csproj",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\ChatRelay.API.csproj",
               "RelativeDocumentMoniker": "ChatRelay.API\\ChatRelay.API.csproj",
@@ -185,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "HealthController.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ChatRelay\\ChatRelay.API\\Controllers\\HealthController.cs",
               "RelativeDocumentMoniker": "ChatRelay.API\\Controllers\\HealthController.cs",
