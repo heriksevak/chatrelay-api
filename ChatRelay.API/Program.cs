@@ -20,7 +20,7 @@ var connectionString =
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(connectionString, ServerVersion.Parse("8.0.36-mysql")));
 
 // Background worker
-builder.Services.AddHostedService<MessageWorker>();
+//builder.Services.AddHostedService<MessageWorker>();
 
 var app = builder.Build();
 
