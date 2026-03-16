@@ -21,8 +21,7 @@ public class MessageWorker : BackgroundService
                 .Where(m => m.Status == "Pending")
                 .OrderBy(m => m.Id)
                 .Take(10)
-                .ToListAsync();
-
+                .ToListAsync(stoppingToken);
 
             foreach (var msg in pendingMessages)
             {
@@ -30,9 +29,9 @@ public class MessageWorker : BackgroundService
                 msg.SentAt = DateTime.UtcNow;
             }
 
-            await db.SaveChangesAsync();
+            await db.SaveChangesAsync(stoppingToken);
 
-            await Task.Delay(5000);
+            await Task.Delay(5000, stoppingToken);
         }
     }
 }

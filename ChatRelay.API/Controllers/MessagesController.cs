@@ -1,6 +1,7 @@
 ﻿using ChatRelay.API.Data;
 using ChatRelay.API.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace ChatRelay.API.Controllers
 {
@@ -18,7 +19,7 @@ namespace ChatRelay.API.Controllers
             _whatsAppService = whatsAppService;
         }
         [HttpPost("send")]
-        public async Task<IActionResult> SendMessage([FromBody] Message request)
+        public async Task<IActionResult> SendMessage([FromBody] SendMessageRequest request)
         {
             var tenant = HttpContext.Items["Tenant"] as Tenant;
 
@@ -29,7 +30,8 @@ namespace ChatRelay.API.Controllers
             {
                 TenantId = tenant.Id,
                 Phone = request.Phone,
-                Content = request.Content,
+                Type = request.Type,
+                Content = JsonSerializer.Serialize(request.Data),
                 Status = "Pending",
                 CreatedAt = DateTime.UtcNow
             };
@@ -39,27 +41,33 @@ namespace ChatRelay.API.Controllers
 
             try
             {
-                var providerMessageId = await _whatsAppService.SendMessage(
+                var metaResponse = await _whatsAppService.SendMessage(
                     request.Phone,
-                    request.Content
+                    request.Type,
+                    request.Data
                 );
+
+                using var doc = JsonDocument.Parse(metaResponse);
+
+                var providerMessageId = doc.RootElement
+                    .GetProperty("messages")[0]
+                    .GetProperty("id")
+                    .GetString();
 
                 message.ProviderMessageId = providerMessageId;
                 message.Status = "Sent";
 
                 await _context.SaveChangesAsync();
+
+                return Content(metaResponse, "application/json"); // return Meta response
             }
             catch
             {
-                message.Status = "Failed";
+                message.Status = "ERROR";
                 await _context.SaveChangesAsync();
-            }
 
-            return Ok(new
-            {
-                message = "Message processed",
-                id = message.Id
-            });
+                return StatusCode(500, "Message failed");
+            }
         }
     }
 }

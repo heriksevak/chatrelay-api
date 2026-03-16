@@ -9,6 +9,7 @@
         public string Phone { get; set; }
 
         public string Content { get; set; }
+        public string Type { get; set; }
 
         public string Status { get; set; }
 
@@ -21,5 +22,11 @@
         public DateTime? DeliveredAt { get; set; }
 
         public DateTime? ReadAt { get; set; }
+    }
+    public class SendMessageRequest
+    {
+        public string Phone { get; set; }
+        public string Type { get; set; }
+        public object Data { get; set; }
     }
 }

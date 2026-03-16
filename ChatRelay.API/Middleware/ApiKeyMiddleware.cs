@@ -27,8 +27,10 @@ public class ApiKeyMiddleware
             return;
         }
 
+        var apiKey = extractedApiKey.ToString();
+
         var tenant = await db.Tenants
-            .FirstOrDefaultAsync(t => t.ApiKey == extractedApiKey);
+            .FirstOrDefaultAsync(t => t.ApiKey == apiKey);
 
         if (tenant == null)
         {
@@ -36,7 +38,6 @@ public class ApiKeyMiddleware
             await context.Response.WriteAsync("Invalid API Key");
             return;
         }
-
 
         context.Items["Tenant"] = tenant;
 
