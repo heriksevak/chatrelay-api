@@ -67,6 +67,7 @@ var connectionString =
     Environment.GetEnvironmentVariable("MYSQL_CONNECTION") ??
     builder.Configuration.GetConnectionString("DefaultConnection");
 
+Console.WriteLine("CONNECTION STRING: " + connectionString);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     //options.UseMySql(connectionString, ServerVersion.Parse("8.0.36-mysql")));
     options.UseMySql(connectionString, ServerVersion.Parse("8.0.36-mysql"),
