@@ -94,7 +94,8 @@ builder.Services.AddCors(options =>
                 "http://localhost:3000",       // tenant app dev
                 "http://localhost:3001",       // admin app dev
                 "https://app.chatrelay.in",   // tenant app prod
-                "https://admin.chatrelay.in" // admin app prod
+                "https://chatrelay.in",   // tenant app prod
+                "https://admin.chatrelay.in" // website app prod
                 // custom tenant domains handled dynamically:
                 // add your tenants' domains here or use AllowAnyOrigin for now
             )
