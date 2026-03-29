@@ -1,71 +1,171 @@
-﻿using ChatRelay.API.Data;
-using ChatRelay.API.Models;
+// ============================================================
+//  ChatRelay — MessagesController
+// ============================================================
+
+using ChatRelay.API.Context;
+using ChatRelay.API.DTOs;
+using ChatRelay.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 
-namespace ChatRelay.API.Controllers
+namespace ChatRelay.API.Controllers;
+
+[Route("api/[controller]")]
+[Authorize]
+public class MessagesController : TenantBaseController
 {
-    [ApiController]
-    [Route("api/messages")]
-    public class MessagesController : ControllerBase
+    private readonly IMessageService _messageService;
+
+    public MessagesController(
+        ITenantContext tenantContext,
+        IMessageService messageService) : base(tenantContext)
     {
-        private readonly ApplicationDbContext _context;
+        _messageService = messageService;
+    }
 
-        private readonly WhatsAppService _whatsAppService;
+    // ── POST /api/messages ────────────────────────────────────
+    // Send a single message of any type
+    [HttpPost]
+    public async Task<IActionResult> Send([FromBody] SendMessageRequest request)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        public MessagesController(ApplicationDbContext context, WhatsAppService whatsAppService)
+        var wabaId = GetRequiredWabaId();
+        if (wabaId == null)
+            return BadRequest(new { message = "X-Waba-Id header is required" });
+
+        await TenantCtx.ValidateWabaAccessAsync(wabaId.Value);
+
+        var result = await _messageService.SendAsync(
+            wabaId.Value, request, CurrentUserId);
+
+        if (!result.Success)
+            return BadRequest(new { message = result.Error });
+
+        return CreatedAtAction(
+            nameof(GetById),
+            new { id = result.Data!.Id },
+            result.Data);
+    }
+
+    // ── POST /api/messages/bulk ───────────────────────────────
+    // Send same message to multiple contacts (max 1000)
+    [HttpPost("bulk")]
+    public async Task<IActionResult> SendBulk([FromBody] BulkSendRequest request)
+    {
+        if (!ModelState.IsValid) return BadRequest(ModelState);
+
+        var wabaId = GetRequiredWabaId();
+        if (wabaId == null)
+            return BadRequest(new { message = "X-Waba-Id header is required" });
+
+        await TenantCtx.ValidateWabaAccessAsync(wabaId.Value);
+
+        var result = await _messageService.SendBulkAsync(
+            wabaId.Value, request, CurrentUserId);
+
+        if (!result.Success)
+            return BadRequest(new { message = result.Error });
+
+        return Ok(result.Data);
+    }
+
+    // ── GET /api/messages ─────────────────────────────────────
+    // List messages with filters
+    [HttpGet]
+    public async Task<IActionResult> GetMessages(
+        [FromQuery] Guid? conversationId,
+        [FromQuery] Guid? contactId,
+        [FromQuery] string? status,
+        [FromQuery] string? direction,
+        [FromQuery] DateTime? from,
+        [FromQuery] DateTime? to,
+        [FromQuery] int page = 1,
+        [FromQuery] int pageSize = 50)
+    {
+        var wabaId = GetRequiredWabaId();
+        if (wabaId == null)
+            return BadRequest(new { message = "X-Waba-Id header is required" });
+
+        await TenantCtx.ValidateWabaAccessAsync(wabaId.Value);
+
+        // Cap page size
+        pageSize = Math.Min(pageSize, 100);
+
+        var filter = new MessageFilterRequest
         {
-            _context = context;
-            _whatsAppService = whatsAppService;
-        }
-        [HttpPost("send")]
-        public async Task<IActionResult> SendMessage([FromBody] SendMessageRequest request)
+            ConversationId = conversationId,
+            ContactId      = contactId,
+            From           = from,
+            To             = to,
+            Page           = Math.Max(1, page),
+            PageSize       = pageSize,
+        };
+
+        if (!string.IsNullOrEmpty(status) &&
+            Enum.TryParse<ChatRelay.Models.MessageStatus>(status, true, out var s))
+            filter.Status = s;
+
+        if (!string.IsNullOrEmpty(direction) &&
+            Enum.TryParse<ChatRelay.Models.MessageDirection>(direction, true, out var d))
+            filter.Direction = d;
+
+        var result = await _messageService.GetMessagesAsync(wabaId.Value, filter);
+
+        return Ok(new
         {
-            var tenant = HttpContext.Items["Tenant"] as Tenant;
+            data       = result.Data,
+            page,
+            pageSize,
+            total      = result.Data?.Count ?? 0
+        });
+    }
 
-            if (tenant == null)
-                return Unauthorized();
+    // ── GET /api/messages/{id} ────────────────────────────────
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var wabaId = GetRequiredWabaId();
+        if (wabaId == null)
+            return BadRequest(new { message = "X-Waba-Id header is required" });
 
-            var rawJson = JsonSerializer.Serialize(request);
+        await TenantCtx.ValidateWabaAccessAsync(wabaId.Value);
 
-            var message = new Message
-            {
-                TenantId = tenant.Id,
-                Phone = request.to,
-                Type = request.type,
-                Content = rawJson,
-                Status = "Pending",
-                CreatedAt = DateTime.UtcNow
-            };
+        var result = await _messageService.GetByIdAsync(id, wabaId.Value);
 
-            _context.Messages.Add(message);
-            await _context.SaveChangesAsync();
+        if (!result.Success)
+            return NotFoundResult(result.Error!);
 
-            try
-            {
-                var metaResponse = await _whatsAppService.SendMessage(request.to,request.type,rawJson);
+        return Ok(result.Data);
+    }
 
-                using var doc = JsonDocument.Parse(metaResponse);
+    // ── DELETE /api/messages/{id} ─────────────────────────────
+    // Cancel a scheduled (pending) message only
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> CancelScheduled(Guid id)
+    {
+        var wabaId = GetRequiredWabaId();
+        if (wabaId == null)
+            return BadRequest(new { message = "X-Waba-Id header is required" });
 
-                var providerMessageId = doc.RootElement
-                    .GetProperty("messages")[0]
-                    .GetProperty("id")
-                    .GetString();
+        await TenantCtx.ValidateWabaAccessAsync(wabaId.Value);
 
-                message.ProviderMessageId = providerMessageId;
-                message.Status = "Sent";
+        var result = await _messageService.CancelScheduledAsync(id, wabaId.Value);
 
-                await _context.SaveChangesAsync();
+        if (!result.Success)
+            return BadRequest(new { message = result.Error });
 
-                return Content(metaResponse, "application/json");
-            }
-            catch
-            {
-                message.Status = "ERROR";
-                await _context.SaveChangesAsync();
+        return Ok(new { message = "Scheduled message cancelled" });
+    }
 
-                return StatusCode(500, "Message failed");
-            }
-        }
+    // ── Helper ────────────────────────────────────────────────
+
+    private Guid? GetRequiredWabaId()
+    {
+        // Try header first, then route/query
+        var header = HttpContext.Request.Headers["X-Waba-Id"].FirstOrDefault();
+        if (!string.IsNullOrEmpty(header) && Guid.TryParse(header, out var id))
+            return id;
+        return CurrentWabaId;
     }
 }

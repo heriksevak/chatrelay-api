@@ -1,5 +1,5 @@
 ﻿using ChatRelay.API.Data;
-using ChatRelay.API.Models;
+using ChatRelay.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChatRelay.API.Controllers
@@ -20,7 +20,7 @@ namespace ChatRelay.API.Controllers
         {
             var tenant = HttpContext.Items["Tenant"] as Tenant;
 
-            contact.TenantId = tenant.Id;
+            contact.Id = tenant.Id;
             contact.CreatedAt = DateTime.UtcNow;
 
             _context.Contacts.Add(contact);
@@ -35,7 +35,7 @@ namespace ChatRelay.API.Controllers
             var tenant = HttpContext.Items["Tenant"] as Tenant;
 
             var contacts = _context.Contacts
-                .Where(c => c.TenantId == tenant.Id)
+                .Where(c => c.Id == tenant.Id)
                 .ToList();
 
             return Ok(contacts);

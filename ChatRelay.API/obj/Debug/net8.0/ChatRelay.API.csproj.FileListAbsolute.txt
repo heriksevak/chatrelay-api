@@ -111,3 +111,4 @@ C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ChatRelay.API.
 C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ChatRelay.API.genruntimeconfig.cache
 C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ref\ChatRelay.API.dll
 C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\obj\Debug\net8.0\ChatRelay.API.sourcelink.json
+C:\Users\HP\source\repos\ChatRelay\ChatRelay.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
