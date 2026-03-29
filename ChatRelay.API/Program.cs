@@ -68,7 +68,16 @@ var connectionString =
     builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.Parse("8.0.36-mysql")));
+    //options.UseMySql(connectionString, ServerVersion.Parse("8.0.36-mysql")));
+    options.UseMySql(connectionString, ServerVersion.Parse("8.0.36-mysql"),
+    mysqlOptions =>
+    {
+        mysqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(10),
+            errorNumbersToAdd: null
+        );
+    }));
 
 //  HttpContextAccessor (required for ITenantContext) 
 builder.Services.AddHttpContextAccessor();
@@ -158,7 +167,16 @@ app.MapGet("/", () => "ChatRelay API Running");  // your health check
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
+
+    try
+    {
+        db.Database.Migrate();
+        Console.WriteLine("Database migrated successfully");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(" Migration failed: " + ex.Message);
+    }
 }
 //  Port binding  your existing logic preserved 
 if (app.Environment.IsDevelopment())
