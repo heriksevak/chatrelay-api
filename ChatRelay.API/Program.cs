@@ -155,6 +155,11 @@ app.UseTenantMiddleware();  // 4. Validate tenant is active
 app.MapControllers();
 app.MapGet("/", () => "ChatRelay API Running");  // your health check
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    db.Database.Migrate();
+}
 //  Port binding  your existing logic preserved 
 if (app.Environment.IsDevelopment())
 {
